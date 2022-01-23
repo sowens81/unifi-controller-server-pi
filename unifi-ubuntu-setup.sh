@@ -16,9 +16,9 @@ sed -i "s/networkMask/$networkMask/" config/01-netcfg.yaml
 sed -i "s/gatewayIPAddress/$gatewayIP/" config/01-netcfg.yaml
 sed -i "s/dnsIPAddresses/$dnsServers/" config/01-netcfg.yaml
 
-cp "configf/99-disable-network-config.cfg"  "/etc/cloud/cloud.cfg.d/99-disable-network-config.cfg"
+cp "config/99-disable-network-config.cfg"  "/etc/cloud/cloud.cfg.d/99-disable-network-config.cfg"
 
-cp "config/01-netcfg.yaml"  "/etc/netplan/config/01-netcfg.yaml"
+cp "config/01-netcfg.yaml"  "/etc/netplan/01-netcfg.yaml"
 
 netplan apply
 
