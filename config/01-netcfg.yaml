@@ -1,0 +1,11 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    netowrkInterface:
+      dhcp4: no
+      addresses:
+        - ipAddress/networkMask
+      gateway4: gatewayIPAddress
+      nameservers:
+          addresses: [dnsIPAddresses]
