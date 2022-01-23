@@ -7,7 +7,7 @@ ipAddress="192.168.0.254"
 networkMask="24"
 gatewayIP="192.168.0.1"
 dnsServers='192.168.0.1, 8.8.8.8' 
-unifiControlSoftware = "https://fw-download.ubnt.com/data/unifi-controller/d41a-debian-6.5.55-1906672766bc49aa990c952117af3dd3.deb"
+unifiControlSoftware="https://fw-download.ubnt.com/data/unifi-controller/d41a-debian-6.5.55-1906672766bc49aa990c952117af3dd3.deb"
 
 # Configure Server Static IP Address
 sed -i "s/netowrkInterface/$networkInterface/" config/01-netcfg.yaml
