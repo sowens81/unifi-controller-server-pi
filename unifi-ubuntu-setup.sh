@@ -3,7 +3,7 @@
 
 hostName="unifi-cloud"
 networkInterface="eth0"
-ipAddress="192.168.0.2"
+ipAddress="192.168.0.254"
 networkMask="24"
 gatewayIP="192.168.0.1"
 dnsServers='192.168.0.1, 8.8.8.8' 
@@ -16,9 +16,9 @@ sed -i "s/networkMask/$networkMask/" config/01-netcfg.yaml
 sed -i "s/gatewayIPAddress/$gatewayIP/" config/01-netcfg.yaml
 sed -i "s/dnsIPAddresses/$dnsServers/" config/01-netcfg.yaml
 
-cp configf/99-disable-network-config.cfg  /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+cp "configf/99-disable-network-config.cfg"  "/etc/cloud/cloud.cfg.d/99-disable-network-config.cfg"
 
-cp config/01-netcfg.yaml  /etc/netplan/config/01-netcfg.yaml
+cp "config/01-netcfg.yaml"  "/etc/netplan/config/01-netcfg.yaml"
 
 netplan apply
 
