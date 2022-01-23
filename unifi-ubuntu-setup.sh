@@ -27,17 +27,18 @@ currentHostName=(hostnamectl)
 sed -i "s/$currentHostName/$hostName/" "/etc/hosts"
 
 # Update and Upgrade Packages
-apt-get update
-apt-get upgrade
+apt-get update -y
+apt-get upgrade -y
+
+
+# Enable SSH Access
+apt-get install -y openssh-server
 systemctl enable ssh
 service ssh start
 
-# Enable SSH Access
-apt-get install openssh-server
-
 # Unifi Controller Install
 wget -O unifi_sysvinit_all.deb $unifiControlSoftware
-apt-get install -f
+apt-get install -y -f
 systemctl enable unifi
 service unifi start
 allow ssh
